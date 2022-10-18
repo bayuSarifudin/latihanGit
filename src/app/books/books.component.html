@@ -1,0 +1,13 @@
+<h2>Programming Books List!</h2>
+<button (click)="toogleBooks()">
+  {{ isShowing ? "Hide Books" : "Show Books" }}
+</button>
+
+<ul *ngIf="isShowing">
+  <ng-container *ngFor="let book of books">
+    <li>
+      <img src="{{ book.image }}" alt="{{ book.name }}" width="100" />
+      {{ book.name }} by {{ book.author }}
+    </li>
+  </ng-container>
+</ul>
